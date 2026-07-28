@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const { id } = Astro.params;
+import * as post from '../../activities/111.md';
+---
+
+<Layout>
+  	<div class="flex flex-row justify-center gap-5 mt-5 h-screen">
+        <h1>{post.frontmatter.title}</h1>
+    	<br />
+		<ul>
+		{post.frontmatter.collaborators.map((collab: string) => (
+        	<li>{collab}</li>
+      	))}
+		</ul>
+	</div>
+</Layout>
