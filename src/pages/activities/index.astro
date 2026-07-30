@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ActivityCard from '../../components/ActivityCard.astro';
+
+const activityModules = import.meta.glob<{ frontmatter: Record<string, unknown> }>(
+  '../../activities/*.md',
+);
+
+const activities = (
+  await Promise.all(
+    Object.entries(activityModules).map(async ([path, loader]) => {
+      const id = path.match(/\/activities\/(.+)\.md$/)?.[1];
+      if (!id) return null;
+
+      const { frontmatter } = await loader();
+      return { id, frontmatter };
+    }),
+  )
+)
+  .filter((activity): activity is NonNullable<typeof activity> => activity !== null)
+  .sort((a, b) => {
+    const dateA = String(a.frontmatter.date ?? '');
+    const dateB = String(b.frontmatter.date ?? '');
+    return dateB.localeCompare(dateA);
+  });
+---
+
+<Layout>
+  <div class="mx-auto max-w-6xl px-5 py-10">
+    <header class="mb-10 text-center">
+      <h1 class="text-3xl font-bold text-slate-800">Actividades</h1>
+      <p class="mt-2 text-slate-600">Explora nuestras actividades y proyectos.</p>
+    </header>
+
+    {
+      activities.length > 0 ? (
+        <ul class="grid grid-cols-1 place-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {activities.map((activity) => (
+            <li class="w-full flex justify-center">
+              <ActivityCard id={activity.id} frontmatter={activity.frontmatter} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-center text-slate-500">No hay actividades publicadas todavía.</p>
+      )
+    }
+  </div>
+</Layout>

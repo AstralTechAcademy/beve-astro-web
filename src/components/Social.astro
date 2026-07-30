@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  linkedin: string;
+  email: string;
+}
+
+const { linkedin, email } = Astro.props;
+---
+
+<div class="flex items-center gap-3">
+  <a
+    class="social-link linkedin"
+    href={linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <Icon name="simple-icons:linkedin" />
+  </a>
+
+  <a class="social-link gmail" href={`mailto:${email}`} aria-label="Correo electrónico">
+    <Icon name="simple-icons:gmail" />
+  </a>
+</div>
+
+<style>
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background: white;
+    color: rgb(71 85 105);
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
+    border: 1px solid rgb(186 230 253 / 0.8);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgb(14 165 233 / 0.15);
+  }
+
+  .social-link.linkedin:hover {
+    color: #0a66c2;
+  }
+
+  .social-link.gmail:hover {
+    color: #ea4335;
+  }
+
+  .social-link :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+</style>

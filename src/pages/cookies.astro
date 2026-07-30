@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-5 py-12">
+    <h1 class="text-3xl font-bold text-slate-800">Política de cookies</h1>
+    <p class="mt-2 text-sm text-slate-500">Última actualización: julio de 2026</p>
+
+    <div class="legal-prose mt-8">
+      <section>
+        <h2>1. ¿Qué son las cookies?</h2>
+        <p>
+          Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando
+          visita un sitio web. Permiten recordar preferencias, analizar el uso del sitio o
+          facilitar determinadas funcionalidades.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Tipos de cookies que utilizamos</h2>
+        <ul>
+          <li>
+            <strong>Cookies técnicas (necesarias):</strong> imprescindibles para el funcionamiento
+            básico del sitio web.
+          </li>
+          <li>
+            <strong>Cookies de preferencias:</strong> recuerdan opciones como el idioma o la
+            configuración de visualización.
+          </li>
+          <li>
+            <strong>Cookies analíticas:</strong> nos ayudan a entender cómo se utiliza el sitio
+            para mejorarlo. Solo se activarán con su consentimiento.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Cookies de terceros</h2>
+        <p>
+          Este sitio puede utilizar servicios de terceros (por ejemplo, Google Analytics o redes
+          sociales) que instalan sus propias cookies. Le recomendamos consultar las políticas de
+          privacidad de dichos proveedores para más información.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Gestión y desactivación de cookies</h2>
+        <p>
+          Puede configurar su navegador para bloquear o eliminar las cookies. Tenga en cuenta
+          que desactivar las cookies técnicas puede afectar al correcto funcionamiento del sitio.
+        </p>
+        <p>Enlaces útiles para gestionar cookies en los navegadores más comunes:</p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Más información</h2>
+        <p>
+          Para conocer cómo tratamos sus datos personales, consulte nuestra
+          <a href="/privacidad">Política de privacidad</a>.
+        </p>
+      </section>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal-prose :global(section) {
+    margin-top: 2rem;
+  }
+
+  .legal-prose :global(h2) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(30 41 59);
+  }
+
+  .legal-prose :global(p),
+  .legal-prose :global(li) {
+    margin-top: 0.75rem;
+    line-height: 1.7;
+    color: rgb(71 85 105);
+  }
+
+  .legal-prose :global(ul) {
+    margin-top: 0.5rem;
+    list-style-type: disc;
+    padding-left: 1.25rem;
+  }
+
+  .legal-prose :global(a) {
+    color: rgb(2 132 199);
+    text-decoration: underline;
+  }
+
+  .legal-prose :global(a:hover) {
+    color: rgb(3 105 161);
+  }
+
+  .legal-prose :global(strong) {
+    font-weight: 600;
+    color: rgb(51 65 85);
+  }
+</style>

@@ -1,7 +1,54 @@
 ---
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  description?: string;
+  accent?: 'sky' | 'indigo';
+}
+
+const { title, description, accent = 'sky' } = Astro.props;
+
+const accentStyles = {
+  sky: {
+    border: 'border-sky-200/80',
+    bg: 'from-sky-50 via-white to-sky-100/40',
+    ring: 'group-hover:ring-sky-200/60',
+    title: 'group-hover:text-sky-700',
+    bar: 'bg-sky-400',
+  },
+  indigo: {
+    border: 'border-indigo-200/80',
+    bg: 'from-indigo-50 via-white to-indigo-100/40',
+    ring: 'group-hover:ring-indigo-200/60',
+    title: 'group-hover:text-indigo-700',
+    bar: 'bg-indigo-400',
+  },
+};
+
+const styles = accentStyles[accent];
 ---
 
-<div class="flex items-center justify-center h-50 w-100 bg-sky-50 ">
-    <p>{title}</p>
+<div
+  class:list={[
+    'group relative flex min-h-52 w-full min-w-64 max-w-xs flex-col justify-center overflow-hidden rounded-2xl border px-8 py-10 text-center shadow-md ring-1 ring-transparent transition duration-300 hover:-translate-y-1.5 hover:shadow-xl',
+    styles.border,
+    styles.ring,
+    `bg-gradient-to-br ${styles.bg}`,
+  ]}
+>
+  <span class:list={['absolute inset-x-0 top-0 h-1', styles.bar]} aria-hidden="true"></span>
+
+  <h2
+    class:list={[
+      'text-2xl font-semibold tracking-tight text-slate-800 transition-colors',
+      styles.title,
+    ]}
+  >
+    {title}
+  </h2>
+
+  {
+    description && (
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">{description}</p>
+    )
+  }
 </div>

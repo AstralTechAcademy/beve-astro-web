@@ -1,22 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-const buttonStyle = "text-black bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-lg text-m w-full sm:w-auto px-5 py-2.5 text-center"
 ---
 
 <Layout>
-  	<div class="flex flex-row justify-center gap-5 mt-5">
-		<div class="flex items-center justify-center">
-			<Card title="Profesionales"></Card>
-		</div>
-		<div class="flex items-center justify-center">
-			<Card title="Educación"></Card>
-		</div>
-	</div>
-	<div class="flex items-center justify-center mt-20">
-		<div class="flex flex-col  items-center">
-			<h2 class="font-bold">Colaboramos con</h2>
-			<img src="/logos_entidades_colaboraciones.png"/>
-		</div>
-	</div>
+  <section class="mx-auto flex max-w-3xl flex-col items-stretch justify-center gap-6 px-5 py-16 sm:flex-row sm:items-center sm:gap-8">
+    <Card
+      title="Profesionales"
+      description="Formación y acompañamiento técnico para equipos y organizaciones."
+      accent="sky"
+    />
+    <Card
+      title="Educación"
+      description="Actividades y recursos para el aprendizaje en el aula y fuera de ella."
+      accent="indigo"
+    />
+  </section>
+
+  <section class="flex items-center justify-center pb-16 pt-4">
+    <div class="flex flex-col items-center gap-4">
+      <h2 class="text-lg font-bold text-slate-800">Colaboramos con</h2>
+      <img
+        src="/logos_entidades_colaboraciones.png"
+        alt="Logos de entidades colaboradoras"
+        class="max-w-full px-5"
+      />
+    </div>
+  </section>
 </Layout>

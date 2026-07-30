@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <article class="mx-auto max-w-3xl px-5 py-12">
+    <h1 class="text-3xl font-bold text-slate-800">Política de privacidad</h1>
+    <p class="mt-2 text-sm text-slate-500">Última actualización: julio de 2026</p>
+
+    <div class="legal-prose mt-8">
+      <section>
+        <h2>1. Responsable del tratamiento</h2>
+        <p>
+          El responsable del tratamiento de sus datos personales es BEVE (en adelante, «el
+          Responsable»). Puede contactar con nosotros a través del correo electrónico indicado en
+          esta web.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Datos que recopilamos</h2>
+        <p>Podemos tratar las siguientes categorías de datos personales:</p>
+        <ul>
+          <li>Datos identificativos: nombre y correo electrónico.</li>
+          <li>Datos de navegación: dirección IP, tipo de navegador y páginas visitadas.</li>
+          <li>Datos facilitados voluntariamente mediante formularios de contacto.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Finalidad del tratamiento</h2>
+        <p>Tratamos sus datos con las siguientes finalidades:</p>
+        <ul>
+          <li>Gestionar consultas o solicitudes de información.</li>
+          <li>Mejorar la experiencia de navegación y el funcionamiento del sitio web.</li>
+          <li>Cumplir obligaciones legales aplicables.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Legitimación</h2>
+        <p>
+          La base legal para el tratamiento es el consentimiento del interesado, la ejecución de
+          medidas precontractuales o contractuales, y el interés legítimo del Responsable en
+          mantener y mejorar el sitio web, conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley
+          Orgánica 3/2018 (LOPDGDD).
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Conservación de los datos</h2>
+        <p>
+          Los datos se conservarán mientras sean necesarios para cumplir la finalidad para la que
+          fueron recogidos y, posteriormente, durante los plazos exigidos por la normativa
+          aplicable.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Destinatarios</h2>
+        <p>
+          No cederemos sus datos a terceros salvo obligación legal o cuando sea necesario para la
+          prestación de servicios (por ejemplo, proveedores de hosting o analítica), siempre con
+          las garantías contractuales adecuadas.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Derechos del interesado</h2>
+        <p>
+          Puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación del
+          tratamiento y portabilidad enviando una solicitud al correo de contacto de esta web.
+          También tiene derecho a presentar una reclamación ante la Agencia Española de Protección
+          de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>).
+        </p>
+      </section>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal-prose :global(section) {
+    margin-top: 2rem;
+  }
+
+  .legal-prose :global(h2) {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(30 41 59);
+  }
+
+  .legal-prose :global(p),
+  .legal-prose :global(li) {
+    margin-top: 0.75rem;
+    line-height: 1.7;
+    color: rgb(71 85 105);
+  }
+
+  .legal-prose :global(ul) {
+    margin-top: 0.5rem;
+    list-style-type: disc;
+    padding-left: 1.25rem;
+  }
+
+  .legal-prose :global(a) {
+    color: rgb(2 132 199);
+    text-decoration: underline;
+  }
+
+  .legal-prose :global(a:hover) {
+    color: rgb(3 105 161);
+  }
+</style>

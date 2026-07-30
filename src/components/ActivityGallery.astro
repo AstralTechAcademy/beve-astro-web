@@ -1,0 +1,32 @@
+---
+import type { GalleryImage } from '../lib/gallery';
+
+interface Props {
+  images: GalleryImage[];
+  title: string;
+}
+
+const { images, title } = Astro.props;
+---
+
+{
+  images.length > 0 ? (
+    <section class="mt-10">
+      <h2 class="mb-4 text-lg font-semibold text-slate-800">Galería</h2>
+      <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {images.map((image, index) => (
+          <li class="overflow-hidden rounded-lg border border-sky-100 bg-white shadow-sm">
+            <img
+              src={image.url}
+              alt={image.alt || `${title} - imagen ${index + 1}`}
+              loading="lazy"
+              class="aspect-[4/3] h-full w-full object-cover transition hover:scale-[1.02]"
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
+  ) : (
+    <p class="mt-10 text-sm text-slate-500 italic">No hay imágenes disponibles en la galería.</p>
+  )
+}
