@@ -2,8 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import ActivityGallery from '../../components/ActivityGallery.astro';
 import { fetchActivityGallery } from '../../lib/gallery';
+import {BrandArrayColors} from '../../Utils/Constants.astro';
+
 
 type AstroComponentFactory = (props?: Record<string, unknown>) => unknown;
+
+const index=Math.floor(Math.random() * (BrandArrayColors.length - 0 + 1)) + 0;
 
 export async function getStaticPaths() {
   const activityModules = import.meta.glob<{
@@ -36,7 +40,7 @@ const { frontmatter, Content, gallery } = Astro.props;
 
 <Layout>
   <article class="mx-auto max-w-4xl px-5 py-10">
-    <a href="/activities" class="text-sm text-sky-600 hover:text-sky-800 hover:underline">
+    <a href="/activities" class:list={["text-sm hover:text-sky-800 hover:underline", BrandArrayColors[index]]}>
       ← Volver a actividades
     </a>
 

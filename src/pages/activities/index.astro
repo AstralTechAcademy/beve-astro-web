@@ -1,14 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ActivityCard from '../../components/ActivityCard.astro';
+import {BGArrayColors} from '../../Utils/Constants.astro';
 
-const activityModules = import.meta.glob<{ frontmatter: Record<string, unknown> }>(
+
+const activitiesMarkdown = import.meta.glob<{ frontmatter: Record<string, unknown> }>(
   '../../activities/*.md',
 );
 
 const activities = (
   await Promise.all(
-    Object.entries(activityModules).map(async ([path, loader]) => {
+    Object.entries(activitiesMarkdown).map(async ([path, loader]) => {
       const id = path.match(/\/activities\/(.+)\.md$/)?.[1];
       if (!id) return null;
 
@@ -26,24 +28,48 @@ const activities = (
 ---
 
 <Layout>
-  <div class="mx-auto max-w-6xl px-5 py-10">
-    <header class="mb-10 text-center">
-      <h1 class="text-3xl font-bold text-slate-800">Actividades</h1>
-      <p class="mt-2 text-slate-600">Explora nuestras actividades y proyectos.</p>
-    </header>
-
-    {
-      activities.length > 0 ? (
-        <ul class="grid grid-cols-1 place-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {activities.map((activity) => (
-            <li class="w-full flex justify-center">
-              <ActivityCard id={activity.id} frontmatter={activity.frontmatter} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p class="text-center text-slate-500">No hay actividades publicadas todavía.</p>
-      )
-    }
+<div class="mt-10 mb-30">
+  <div class="text-center">
+    <h1 class="text-3xl font-bold text-slate-800">Actividades</h1>
+    <p class="mt-2 text-slate-600">Explora nuestras actividades y proyectos.</p>
   </div>
+
+  <div class="relative mx-auto max-w-5xl">
+    <!-- Línea central -->
+    <div
+      class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gray-300"
+    ></div>
+
+    <div class="mt-10">
+      {activities.map((activity, index) => (
+        <div class="relative grid grid-cols-2">
+          <!-- Punto de la timeline -->
+          <div
+            class:list={["absolute left-1/2 top-6 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white ", BGArrayColors[index]]}
+          ></div>
+
+          {index % 2 === 0 ? (
+            <!-- Derecha -->
+            <div class="col-start-2 pl-10">
+              <ActivityCard id={activity.id} 
+                title={activity.frontmatter.title} 
+                description={activity.frontmatter.description}
+                date={activity.frontmatter.date}
+                index={index}/>
+            </div>
+          ) : (
+            <!-- Izquierda -->
+            <div class="col-start-1 pr-10">
+              <ActivityCard id={activity.id} 
+                title={activity.frontmatter.title} 
+                description={activity.frontmatter.description}
+                date={activity.frontmatter.date}
+                index={index}/>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 </Layout>

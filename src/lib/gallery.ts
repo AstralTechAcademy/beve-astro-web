@@ -35,7 +35,22 @@ export async function fetchActivityGallery(activityId: string): Promise<GalleryI
     console.warn(
       `[gallery] GALLERY_API_URL no configurada. Galería vacía para actividad ${activityId}.`,
     );
-    return [];
+    return [normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
+    ];
   }
 
   try {

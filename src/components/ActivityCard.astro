@@ -1,34 +1,35 @@
 ---
+import {BrandArrayColors, BGArrayColors, BorderArrayColors, HoverShadowArrayColors} from '../Utils/Constants.astro';
+
 interface Props {
   id: string;
-  frontmatter: {
-    title: string;
-    description?: string;
-    date?: string;
-  };
+  title: string;
+  description: string;
+  date: string;
+  index: number;
 }
 
-const { id, frontmatter } = Astro.props;
+const { id, title, description, date, index} = Astro.props;
 ---
 
 <a
   href={`/activity/${id}`}
-  class="group block w-full max-w-sm rounded-xl border border-sky-100 bg-sky-50 p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md"
+  class:list={["group block w-full max-w-sm rounded-xl border bg-white p-6 shadow-sm transition", BorderArrayColors[index], HoverShadowArrayColors[index]]}
 >
-  <h2 class="text-xl font-semibold text-slate-800 group-hover:text-sky-700">
-    {frontmatter.title}
+  <h2 class:list={["text-xl font-semibold group-hover:text-white-700", BrandArrayColors[index]]}>
+    {title}
   </h2>
 
   {
-    frontmatter.description && (
-      <p class="mt-2 line-clamp-3 text-sm text-slate-600">{frontmatter.description}</p>
+    description && (
+      <p class="mt-2 line-clamp-3 text-sm text-white-600">{description}</p>
     )
   }
 
   {
-    frontmatter.date && (
-      <time datetime={frontmatter.date} class="mt-4 block text-xs text-slate-500">
-        {new Date(frontmatter.date).toLocaleDateString('es-ES', {
+    date && (
+      <time datetime={date} class="mt-4 block text-xs">
+        {new Date(date).toLocaleDateString('es-ES', {
           year: 'numeric',
           month: 'long',
           day: 'numeric',
