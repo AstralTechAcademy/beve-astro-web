@@ -1,16 +1,14 @@
 ---
-title: Mejorando el proceso de fabricación
-prorama: ¿Qué es sostenible?
-school: Fundación Osotu (Lanbarri)
-author: Gabriel Domínguez
+title: Desarrollo de aplicaciones móviles
+prorama: ¿Sabemos usar el mundo virtual?
+school: Colegios El Valle
 collaborators: ["Gabriel Domínguez"]
-description: 
+description: Activdad para conocer la aquitectura de las apliaciones móviles desde un punto de vista práctico donde los estudiantes programan pequeñas piezas de código para comprender como esos cambios afectan al comportamiento de la aplicación.
 date: 2026-05-01
 gallery: 
 ---
 
 ## Sobre la actividad
-
 
 Los estudiantes trabajon durante una sesión en el desarrollo de aplicación móvil que interacuaba con servicios cloud (backend, base de datos) para mostrar al usuario el feed de publicaciones de una red social.
 

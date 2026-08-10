@@ -40,7 +40,24 @@ const activities = (
       class="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gray-300"
     ></div>
 
-    <div class="mt-10">
+    <div id="timeline-mobile" class="mt-10 flex flex-col items-center d-none">
+      {activities.map((activity, index) => (
+          <!-- Punto de la timeline -->
+          <div
+            class:list={["mt-5 top-6 z-10 h-4 w-4 rounded-full border-4 border-white ", BGArrayColors[index]]}
+          >
+          </div>
+          <div class="mt-5 z-10">
+              <ActivityCard id={activity.id} 
+                title={activity.frontmatter.title} 
+                description={activity.frontmatter.description}
+                date={activity.frontmatter.date}
+                index={index}/>
+            </div>
+      ))}
+    </div>
+
+    <div id="timeline-desktop" class="mt-10 d-none">
       {activities.map((activity, index) => (
         <div class="relative grid grid-cols-2">
           <!-- Punto de la timeline -->
@@ -73,3 +90,10 @@ const activities = (
   </div>
 </div>
 </Layout>
+
+<style>
+/* Móvil: mostrar timeline móvil y ocultar desktop */ 
+@media (max-width: 500px) { #timeline-desktop { display: none; } } 
+/* Escritorio: mostrar timeline desktop y ocultar móvil */ 
+@media (min-width: 501px) { #timeline-mobile { display: none; } }
+</style>

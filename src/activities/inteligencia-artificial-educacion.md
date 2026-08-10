@@ -2,7 +2,6 @@
 title: Inteligencia artificial en eduación
 prorama: ¿Cómo queremos trabajar?
 school: Colegios El Valle
-author: Gabriel Domínguez
 collaborators: ["Gabriel Domínguez", "Asier Criado", "Pietro Esposito","Pablo Jimenez","Cristina Damián", "Yeray Alonso", "Joseph Escribano"]
 description: Actividad sobre el papel de la inteligencia artificial en la sociedad y en el aprendizaje
 date: 2024-05-01

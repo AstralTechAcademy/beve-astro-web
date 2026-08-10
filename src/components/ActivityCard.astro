@@ -31,8 +31,7 @@ const { id, title, description, date, index} = Astro.props;
       <time datetime={date} class="mt-4 block text-xs">
         {new Date(date).toLocaleDateString('es-ES', {
           year: 'numeric',
-          month: 'long',
-          day: 'numeric',
+          month: 'long'
         })}
       </time>
     )

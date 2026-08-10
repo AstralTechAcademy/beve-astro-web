@@ -2,15 +2,13 @@
 title: Mejorando el proceso de fabricación
 prorama: ¿Qué es sostenible?
 school: Fundación Osotu (Lanbarri)
-author: Gabriel Domínguez
 collaborators: ["Asier Criado", "Juan Manuel Duch", "Ibai Bañuelos", "Alvaro Fernández"]
-description: 
+description: Actividad donde los estudiantes en grupos deberán comprender los problemas ecónomicos, sociales y medio ambientales que supone las industrias. Después deberán elaborar un proyecto de mejorar teniendo en cuenta estos aspectos.
 date: 2024-02-01
 gallery: 
 ---
 
 ## Sobre la actividad
-
 
 Los estudiantes trabajon durante tres sesiones en compañía de nuestros profesionales iniciativas
 para mejorar el proceso de fabricación industrial de un lápiz desde el punto de vista económico, social y ambiental. 
