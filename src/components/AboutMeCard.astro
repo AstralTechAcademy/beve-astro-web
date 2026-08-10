@@ -16,7 +16,9 @@ const { name, surname, description, linkedin, mail, photo, tags} = Astro.props;
 
 ---
 <div id="mobile" class="flex flex-col gap-10 m-10">
-<img class="h-80" src={photo}/>
+  <div class="rounded-xl">
+<img class="scale-75 rounded-2xl" src={photo}/>
+</div>
 <div>
     <div class="flex flex-row gap-3">
   <a
@@ -51,7 +53,7 @@ const { name, surname, description, linkedin, mail, photo, tags} = Astro.props;
 </div>
 
 <div  id="desktop" class="flex flex-row gap-10 m-10">
-<img class="h-80" src={photo}/>
+<img class="h-80 rounded-2xl" src={photo}/>
 <div>
     <div class="flex flex-col gap-3">
   <a
