@@ -15,7 +15,42 @@ interface Props {
 const { name, surname, description, linkedin, mail, photo, tags} = Astro.props;
 
 ---
-<div class="flex flex-row gap-10 m-10">
+<div id="mobile" class="flex flex-col gap-10 m-10">
+<img class="h-80" src={photo}/>
+<div>
+    <div class="flex flex-row gap-3">
+  <a
+    href={linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <Icon class:list={['text-2xl', IconColors.linkedin]} name="simple-icons:linkedin" />
+  </a>
+
+  <a href={`mailto:${mail}`} aria-label="Correo electrónico">
+    <Icon class:list={['text-2xl', IconColors.mail]} name="simple-icons:gmail" />
+  </a>
+</div>
+</div>
+<div class="flex flex-col gap-3 ml-5">
+<p class="text-2xl font-semibold ">
+{name} {surname}
+</p>
+<p>
+{description}
+</p>
+<ul class="mt-1 flex flex-wrap gap-2">
+  {tags.map((tag: string, index: number)  => (
+    <li class:list={["rounded-full px-3 py-1 text-xs text-white", BGArrayColors[index]]}>
+      {tag}
+    </li>
+  ))}
+</ul>
+</div>
+</div>
+
+<div  id="desktop" class="flex flex-row gap-10 m-10">
 <img class="h-80" src={photo}/>
 <div>
     <div class="flex flex-col gap-3">
@@ -49,4 +84,11 @@ const { name, surname, description, linkedin, mail, photo, tags} = Astro.props;
 </ul>
 </div>
 </div>
+
+<style>
+/* Móvil: mostrar timeline móvil y ocultar desktop */ 
+@media (max-width: 500px) { #desktop { display: none; } } 
+/* Escritorio: mostrar timeline desktop y ocultar móvil */ 
+@media (min-width: 501px) { #mobile { display: none; } }
+</style>
 
