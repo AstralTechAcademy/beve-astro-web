@@ -1,3 +1,26 @@
+import { Storage } from '@google-cloud/storage';
+
+const storage = new Storage();
+
+const BUCKET_NAME = 'beve-23eqr';
+const PREFIX = 'fotografias/actividades';
+
+export async function getGalleryImages() {
+    const [files] = await storage
+    .bucket(BUCKET_NAME)
+    .getFiles({
+        prefix: PREFIX,
+    });
+
+    return files.filter((file) =>
+      /\.(jpg|jpeg|webp|)$/i.test(file.name)
+    )
+    .map((file) => ({
+      name: file.name.split('/').pop(),
+      url: file.publicUrl()
+    }));;
+}
+
 export interface GalleryImage {
   url: string;
   alt?: string;

@@ -5,7 +5,7 @@ interface Props {
   title: string;
   icon: string
   description?: string;
-  accent?: 'orange' | 'pink';
+  accent?: 'orange' | 'pink' | 'blue' | 'green';
 }
 
 const { title, description, accent = 'orange' , icon='hugeicons:file-unknown'} = Astro.props;
@@ -24,6 +24,20 @@ const accentStyles = {
     iconColor: 'text-pink-500',
     title: 'text-pink-500',
     bar: 'bg-pink-400',
+  },
+  blue: {
+    border: 'border-blue-500/80',
+    bg: 'from-blue-50 via-white to-blue-100/40',
+    iconColor: 'text-blue-500',
+    title: 'text-blue-500',
+    bar: 'bg-blue-400',
+  },
+  green: {
+    border: 'border-green-500/80',
+    bg: 'from-green-50 via-white to-green-100/40',
+    iconColor: 'text-green-500',
+    title: 'text-green-500',
+    bar: 'bg-green-400',
   },
 };
 

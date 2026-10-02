@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from "../components/Card.astro"
+---
+
+<Layout>
+<section class="relative flex min-h-[70vh] w-full  items-center justify-center overflow-hidden bg-pink-600 px-6 text-center">
+  <div class="relative z-10 max-w-4xl text-white">
+    <p class="text-xl font-medium tracking-wide sm:text-2xl">
+      Los cambios comienzan con la
+    </p>
+
+    <h1
+      class="mt-2 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl"
+    >
+      educación
+    </h1>
+
+    <div class="mx-auto my-8 h-1 w-16 rounded-full bg-white/80"></div>
+
+    <p
+      class="text-4xl font-black tracking-tight sm:text-5xl md:text-6xl"
+    >
+      ¡¡OS NECESITAMOS!!
+    </p>
+
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
+      Únete a nuestra comunidad de profesionales y ayúdanos a acercar el
+      mundo laboral a los centros académicos.
+    </p>
+
+    <a
+      href="/participa"
+      class="mt-8 inline-flex rounded-xl bg-white px-7 py-4
+             font-bold text-red-600 shadow-lg
+             transition duration-300
+             hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
+    >
+      Quiero participar →
+    </a>
+
+    <a
+      href="/participa"
+      class="mt-8 inline-flex rounded-xl bg-white px-7 py-4
+             font-bold text-red-600 shadow-lg
+             transition duration-300
+             hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
+    >
+      Soy profesor →
+    </a>
+
+  </div>
+</section>
+  <div class="flex flex-col justify-center items-center mt-10 mb-10">
+    <h2 class="text-3xl font-bold">Nuestras actividades</h2>
+      <div class="grid grid-cols-2 gap-6 items-center justify-center mt-10">
+      <Card
+        title="Tecnología y sociedad"
+        icon="hugeicons:robot-02"
+        description="Aprendemos cómo funciona la tecnología (Apps, Cloud, Seguridad, IA)"
+        accent="blue"
+      />
+      <Card
+        title="Orientación profesional"
+        icon="hugeicons:mortarboard-01"
+        description="Exponemos nuestra carrera académica y profesional para ayudar a los estudiantes en su elección"
+        accent="orange"
+      />
+      <Card
+        title="Trabajo en equipos"
+        icon="hugeicons:user-group"
+        description="Resolvemos por equipos la pregunta planteada. Aplicamos al metodología de los 6 sombreros para pensar"
+        accent="pink"
+      />
+      <Card
+        title="Soluciones sostenibles"
+        icon="hugeicons:eco-power"
+        description="Desarrollamos un proyecto atendiendo a aspectos sociales, económicos y ambientales"
+        accent="green"
+      />
+      </div>
+  </div>
+  </div>
+</Layout>

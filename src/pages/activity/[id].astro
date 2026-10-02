@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import ActivityGallery from '../../components/ActivityGallery.astro';
 import { fetchActivityGallery } from '../../lib/gallery';
 import {BrandArrayColors} from '../../Utils/Constants.astro';
-
+import { Storage } from '@google-cloud/storage';
 
 type AstroComponentFactory = (props?: Record<string, unknown>) => unknown;
 
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
       const mod = await loader();
       const gallery = await fetchActivityGallery(id);
-
+      
       return {
         params: { id },
         props: {
