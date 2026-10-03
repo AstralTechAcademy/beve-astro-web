@@ -1,0 +1,50 @@
+---
+import PrivacyPolicy from '../components/PrivacyPolicy.astro';
+import '../styles/global.css';
+
+const title = 'Protección de datos personales | beVE';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Información sobre protección de datos personales de la Asociación beVE."
+    />
+    <title>{title}</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-8">
+        <a href="/" class="inline-flex items-center" aria-label="beVE - Inicio">
+          <img
+            src="https://storage.googleapis.com/beve-23eqr/beve_logo.png"
+            alt="beVE"
+            class="h-auto w-32 sm:w-40"
+          />
+        </a>
+
+        <a
+          href="/"
+          class="text-sm font-medium text-slate-600 transition hover:text-blue-600"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </header>
+
+    <main class="px-4 py-10 sm:px-6 sm:py-14">
+      <PrivacyPolicy />
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-5xl px-6 py-8 text-center text-sm text-slate-500 sm:px-8">
+        © {new Date().getFullYear()} Asociación beVE
+      </div>
+    </footer>
+  </body>
+</html>

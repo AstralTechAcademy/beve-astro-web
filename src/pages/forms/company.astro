@@ -1,0 +1,45 @@
+---
+import CompanyForm from '../../components/CompanyForm.astro';
+import '../../styles/global.css';
+
+const title = 'Únete a la comunidad | beVE';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Únete a la comunidad de profesionales beVE." />
+    <title>{title}</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 px-4 py-8 text-slate-900">
+    <main class="mx-auto max-w-2xl">
+      <section class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60 ring-1 ring-slate-200">
+        <div class="bg-white px-6 pt-6 sm:px-10 sm:pt-10">
+          <img
+            src="https://storage.googleapis.com/beve-23eqr/beve_logo.png"
+            alt="beVE"
+            class="mx-auto mb-8 h-auto w-full max-w-xl"
+          />
+
+          <div class="pb-8 text-center">
+            <h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+              ¡Estás a un paso de ofrecer a tus empleados nuevas formas de mejorar profesionalmente!
+            </h1>
+            <p class="mx-auto mt-3 max-w-lg text-sm leading-6 text-slate-500">
+              Completa tus datos para que podamos ponernos en contacto.
+            </p>
+          </div>
+        </div>
+
+        <CompanyForm />
+      </section>
+
+      <p class="mt-6 text-center text-xs text-slate-400">
+        © {new Date().getFullYear()} beVE
+      </p>
+    </main>
+  </body>
+</html>
