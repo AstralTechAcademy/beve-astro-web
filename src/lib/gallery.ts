@@ -41,64 +41,15 @@ function normalizeImage(entry: string | GalleryImage): GalleryImage {
   };
 }
 
-function getGalleryEndpoint(activityId: string): string | undefined {
-  const baseUrl = import.meta.env.GALLERY_API_URL;
-
-  if (!baseUrl) {
-    return undefined;
-  }
-
-  return baseUrl.replace('{id}', activityId);
-}
-
 export async function fetchActivityGallery(activityId: string): Promise<GalleryImage[]> {
-  const endpoint = getGalleryEndpoint(activityId);
+  const files = await getGalleryImages();
 
-  if (!endpoint) {
+  if (!files) {
     console.warn(
-      `[gallery] GALLERY_API_URL no configurada. Galería vacía para actividad ${activityId}.`,
+      `Galería vacía para actividad ${activityId}.`,
     );
-    return [normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-      normalizeImage("https://assets.diarioconcepcion.cl/2022/10/pag-14-4-Colegio-Bicentenario-Republica-de-Brasil-foto-isidoro.jpg"),
-    ];
+    return []
   }
-
-  try {
-    const response = await fetch(endpoint);
-
-    if (!response.ok) {
-      console.warn(
-        `[gallery] Error ${response.status} al obtener galería de ${activityId}: ${endpoint}`,
-      );
-      return [];
-    }
-
-    const data = (await response.json()) as GalleryApiResponse | string[];
-
-    if (Array.isArray(data)) {
-      return data.map(normalizeImage);
-    }
-
-    if (!data.images?.length) {
-      return [];
-    }
-
-    return data.images.map(normalizeImage);
-  } catch (error) {
-    console.warn(`[gallery] No se pudo obtener la galería de ${activityId}:`, error);
-    return [];
-  }
+  
+  return files.map(({ url }) => normalizeImage(url));
 }
