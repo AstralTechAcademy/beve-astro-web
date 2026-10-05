@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ActivityGallery from '../../components/ActivityGallery.astro';
-import { fetchActivityGallery } from '../../lib/gallery';
 import {BrandArrayColors} from '../../Utils/Constants.astro';
-import { Storage } from '@google-cloud/storage';
+import images from '../../lib/images.json';
+
+export interface GalleryImage {
+  url: string;
+  alt?: string;
+}
 
 type AstroComponentFactory = (props?: Record<string, unknown>) => unknown;
 
@@ -21,7 +25,12 @@ export async function getStaticPaths() {
       if (!id) return null;
 
       const mod = await loader();
-      const gallery = await fetchActivityGallery(id);
+      const galleryName : String = mod.frontmatter.gallery as String
+      var gallery :string[] = []
+      if (Object.keys(images).includes(galleryName))
+      {
+        gallery = images[galleryName]
+      }
       
       return {
         params: { id },

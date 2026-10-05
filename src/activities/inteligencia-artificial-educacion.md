@@ -5,7 +5,7 @@ school: Colegios El Valle
 collaborators: ["Gabriel Domínguez", "Asier Criado", "Pietro Esposito","Pablo Jimenez","Cristina Damián", "Yeray Alonso", "Joseph Escribano"]
 description: Actividad sobre el papel de la inteligencia artificial en la sociedad y en el aprendizaje
 date: 2024-05-01
-gallery: 
+gallery: 'uso-ia-aulas'
 ---
 
 ## Sobre la actividad

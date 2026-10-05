@@ -5,7 +5,7 @@ school: Fundación Osotu (Lanbarri)
 collaborators: ["Gabriel Domínguez", "Asier Criado", "Ibai Bañuelos", "Galder Irusta", "Ander Calvo", "June Gonzalez", "Sergio Calvo"]
 description: Actividad sobre la sostenibilidad, la ética y el papel de la tecnología (Inteligencia Artigial) en el mundo actual.
 date: 2023-11-01
-gallery: 
+gallery: "explorando-futuro"
 ---
 
 ## Sobre la actividad

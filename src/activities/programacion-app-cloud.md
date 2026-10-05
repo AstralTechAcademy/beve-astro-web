@@ -5,7 +5,7 @@ school: Colegios El Valle
 collaborators: ["Gabriel Domínguez"]
 description: Activdad para conocer la aquitectura de las apliaciones móviles desde un punto de vista práctico donde los estudiantes programan pequeñas piezas de código para comprender como esos cambios afectan al comportamiento de la aplicación.
 date: 2026-05-01
-gallery: 
+gallery: "programacion-app-cloud"
 ---
 
 ## Sobre la actividad

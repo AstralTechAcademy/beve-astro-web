@@ -5,7 +5,7 @@ school: ETSII Universidad Politécnica de Madrid
 collaborators: ["Gabriel Domínguez", "Asier Criado"]
 description: Colaboramos en el Máster de Ingeniería ambiental (UPM) para compartir con sus estudiantes nuestra experiencia realizando actividades en colegios e institutos. Les ayudamos a preparar una sesión, para estudiantes de 4ESO, sobre el tratamiento de aguas.
 date: 2024-10-01
-gallery: 
+gallery: "aprendizaje-servicio"
 ---
 
 ## Sobre la actividad

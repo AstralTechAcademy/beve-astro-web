@@ -5,7 +5,7 @@ school: Fundación Osotu (Lanbarri)
 collaborators: ["Asier Criado", "Juan Manuel Duch", "Ibai Bañuelos", "Alvaro Fernández"]
 description: Actividad donde los estudiantes en grupos deberán comprender los problemas ecónomicos, sociales y medio ambientales que supone las industrias. Después deberán elaborar un proyecto de mejorar teniendo en cuenta estos aspectos.
 date: 2025-03-01
-gallery: 
+gallery: "importancia-discursos"
 ---
 
 ## Sobre la actividad

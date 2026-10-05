@@ -1,4 +1,5 @@
 import { Storage } from '@google-cloud/storage';
+import { writeFile } from 'node:fs/promises';
 
 const storage = new Storage();
 
@@ -12,44 +13,41 @@ export async function getGalleryImages() {
         prefix: PREFIX,
     });
 
-    return files.filter((file) =>
-      /\.(jpg|jpeg|webp|)$/i.test(file.name)
-    )
-    .map((file) => ({
-      name: file.name.split('/').pop(),
+  const filesByFolder = new Map<string, {
+    name: string;
+    url: string;
+  }[]>();
+
+  files.forEach((file) => {
+    const parts = file.name.split('/');
+    const name = parts.pop() ?? 'default';
+    const folder = parts.pop() ?? 'default';
+
+    if (!filesByFolder.has(folder)) {
+      filesByFolder.set(folder, []);
+    }
+
+    filesByFolder.get(folder)!.push({
+      name,
       url: file.publicUrl()
-    }));;
+    });
+  });
+
+  return filesByFolder
 }
 
-export interface GalleryImage {
-  url: string;
-  alt?: string;
+const files = await getGalleryImages();
+
+if (files.size == 0) {
+  console.warn(
+    `Galería vacía para actividad`,
+  );
 }
 
-interface GalleryApiResponse {
-  images?: Array<string | GalleryImage>;
-}
+const json = Object.fromEntries(files);
 
-function normalizeImage(entry: string | GalleryImage): GalleryImage {
-  if (typeof entry === 'string') {
-    return { url: entry, alt: '' };
-  }
-
-  return {
-    url: entry.url,
-    alt: entry.alt ?? '',
-  };
-}
-
-export async function fetchActivityGallery(activityId: string): Promise<GalleryImage[]> {
-  const files = await getGalleryImages();
-
-  if (!files) {
-    console.warn(
-      `Galería vacía para actividad ${activityId}.`,
-    );
-    return []
-  }
-  
-  return files.map(({ url }) => normalizeImage(url));
-}
+await writeFile(
+  './src/lib/images.json',
+  JSON.stringify(json, null, 2),
+  'utf8'
+);

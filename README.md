@@ -3,31 +3,6 @@
 ```sh
 npm create astro@latest -- --template basics
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -42,6 +17,17 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Generate activities images links
+  
+The script gallery.ts uses application_default_credentials.json ile to connect and download all images stored in Google Cloud Storage (GCS) in the bucket 'beve-23eqr' and folder 'fotografias/actividades'. Inside 'fotografias/actividades' the images are structured in folder, every activities have a folder here.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To create the galleries for the activities you must run the command 
+
+`node src/lib/gallery.ts`
+
+## Generate images and push 
+
+Due images.json is created before build astro web, we have to create this file before push the code to Github and run in Github action the build and publish actions.
+
+
+`node src/lib/gallery.ts; git push origin main`
