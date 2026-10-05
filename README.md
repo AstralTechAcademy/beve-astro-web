@@ -30,4 +30,4 @@ To create the galleries for the activities you must run the command
 Due images.json is created before build astro web, we have to create this file before push the code to Github and run in Github action the build and publish actions.
 
 
-`node src/lib/gallery.ts; git push origin main`
+`node src/lib/gallery.ts; git add src/lib/images.json; git commit -m "build"; git push origin main`
