@@ -1,10 +1,5 @@
 {
-  "actividades": [
-    {
-      "name": "",
-      "url": "https://storage.googleapis.com/beve-23eqr/fotografias%2Factividades%2F"
-    }
-  ],
+  "actividades": [],
   "aprendizaje-servicio": [
     {
       "name": "unnamed (1).jpg",
@@ -415,10 +410,6 @@
   ],
   "importancia-discursos": [
     {
-      "name": "",
-      "url": "https://storage.googleapis.com/beve-23eqr/fotografias%2Factividades%2Fimportancia-discursos%2F"
-    },
-    {
       "name": "1744372822325.jpeg",
       "url": "https://storage.googleapis.com/beve-23eqr/fotografias%2Factividades%2Fimportancia-discursos%2F1744372822325.jpeg"
     },
@@ -444,10 +435,6 @@
     }
   ],
   "programacion-app-cloud": [
-    {
-      "name": "",
-      "url": "https://storage.googleapis.com/beve-23eqr/fotografias%2Factividades%2Fprogramacion-app-cloud%2F"
-    },
     {
       "name": "1777371387064.jpeg",
       "url": "https://storage.googleapis.com/beve-23eqr/fotografias%2Factividades%2Fprogramacion-app-cloud%2F1777371387064.jpeg"

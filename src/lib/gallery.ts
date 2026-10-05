@@ -27,10 +27,14 @@ export async function getGalleryImages() {
       filesByFolder.set(folder, []);
     }
 
-    filesByFolder.get(folder)!.push({
-      name,
-      url: file.publicUrl()
-    });
+    const regex = /\b(jpg|png|jpeg)\b/g;
+    if (regex.test(file.publicUrl()))
+    {
+      filesByFolder.get(folder)!.push({
+        name,
+        url: file.publicUrl()
+      });
+    }
   });
 
   return filesByFolder
